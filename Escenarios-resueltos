@@ -6,3 +6,129 @@ FROM
   cars.car_info;
   
   Con DISTINCT le pedimos al programa que nos entregue los valores unicos de la columna fuel_type, de nuestra tabla car_info. ´´´
+  
+  
+2. Inspeccionaremos la longitus maxima y minima de la columna lenght para ver si se cumple la longitud que se indica en la Descripcion de los datos cuyo rango dice ser de  141.1 a 208.1. 
+
+SELECT
+  MIN(length) AS min_length,
+  MAX(length) AS max_length
+FROM
+  cars.car_info;
+
+3. Evaluaremos si en la columna num_of_doors hay valores nulos o no. Para ello consultamos que se nos muestren todos los registros donde num_of_doors posea valores nulos.
+
+SELECT
+  *
+FROM
+  cars.car_info 
+
+WHERE 
+
+  num_of_doors IS NULL;
+  
+ 4.Nos aparecio que tengo 4 registros con valores nulos. Y para solucionar esto procederemos a insertar valores en esas filas. 
+  
+  UPDATE
+  cars.car_info
+SET
+  num_of_doors = "four"
+WHERE
+  make = "dodge"
+  AND fuel_type = "gas"
+  AND body_style = "sedan";
+  
+  
+  5. Ahora queriamos realizar el paso 1 pero en la columna de num_of_cylinders
+  
+  SELECT
+  DISTINCT num_of_cylinders
+FROM
+  cars.car_info;
+  
+  
+ Nos damos cuenta de que hay dos registros que hacen alusion al numero dos. Pero uno esta escrito como "TWO" y el otro como "TOW" 
+ 
+ 6. Para ello debemos reemplazar el valor TOW por TWO de la siguiente forma: 
+ 
+ UPDATE
+  cars.car_info
+SET
+  num_of_cylinders = "two"
+WHERE
+  num_of_cylinders = "tow";
+  
+  7. Ahora queremos realizar el paso numero 2 pero en la columna compression_radio, que segun la descripcion de los datos tiene un rango de valores entre 6 y 23.
+  
+  SELECT
+  MIN(compression_ratio) AS min_compression_ratio,
+  MAX(compression_ratio) AS max_compression_ratio
+FROM
+  cars.car_info;
+  
+  
+  Lo que sucede es que nos aparece como maximo el valor de 70, pero esto no es correcto. Por lo que debemos pensar que se ha querido poner el valor de 7. 
+  Para corregir esto debemos hacer lo siguiente: 
+  
+SELECT
+  MIN(compression_ratio) AS min_compression_ratio,
+  MAX(compression_ratio) AS max_compression_ratio
+FROM
+  cars.car_info
+
+WHERE
+
+  compression_ratio <> 70;
+  
+  Ahora lo que queremos realizar es que los registros que tengan como valor mas de 70, se coloquen en la columna num_of_rows_to_delete, para luego eliminarlo
+  
+  SELECT
+
+   COUNT(*) AS num_of_rows_to_delete
+
+FROM
+
+   cars.car_info
+
+WHERE
+
+   compression_ratio = 70;
+   
+   Aqui procedemos a eliminarlo:
+   
+   DELETE cars.car_info
+
+WHERE compression_ratio = 70;
+
+8. Por ultimo queremos ver si hay alguna inconsistencia en la columna drive_wheels, para ello usamos la funcion DISTINCT que ya vimos. 
+
+ SELECT
+  DISTINCT drive_wheels
+FROM
+  cars.car_info;
+  
+  Aqui como resultado aparecen registros y hay dos registros iguales, pero que fueron tomados como unicos, y nos debe hacer pensar que es por que tiene algun espacio. 
+  
+  Para ello lo confirmamos usando la funcion LENGHT
+  SELECT
+  DISTINCT drive_wheels,
+  LENGTH(drive_wheels) AS string_length
+FROM
+  cars.car_info;
+  
+  Y vemos que es cierto, uno de esos registros posee 3 valores y el otro 4. 
+  
+  Procedemos a usar la siguiente consulta con la funcion TRIM, para eliminar los posibles espacios en la columna: 
+  
+  UPDATE
+
+  cars.car_info
+
+SET
+
+  drive_wheels = TRIM(drive_wheels)
+
+WHERE TRUE;
+
+
+  
