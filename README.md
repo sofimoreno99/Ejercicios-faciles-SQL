@@ -44,12 +44,6 @@ El tercer factor es el pago de pérdida promedio relativo por año de vehículo 
 25. highway-mpg: continuous from 16 to 54.
 26. price: continuous from 5118 to 45400.
 
-1. Segun la descripcion de los datos fuel_type column solo deberia tener dos tipos de combustibles: diesel and gas. Para saber si esto es correcto vamos a realizar la siguiente consulta: 
-SELECT  
-  DISTINCT fuel_type
-FROM
-  cars.car_info;
-  
-  Con DISTINCT le pedimos al programa que nos entregue los valores unicos de la columna fuel_type, de nuestra tabla car_info.
+
   
   
