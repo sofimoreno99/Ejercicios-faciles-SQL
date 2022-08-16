@@ -3,13 +3,13 @@
 Les comparto algunas consultas faciles para realizar si estas empezando a estudiar Análisis de datos. 
 
 # Escenario 1-- Practiva de limpieza de datos
-En este escenario, usted es un analista de datos que trabaja con una nueva empresa de concesionarios de automóviles usados. Los inversionistas quieren que averigüe qué automóviles son los más populares entre los clientes para que puedan asegurarse de almacenarlos en consecuencia.
+- En este escenario, usted es un analista de datos que trabaja con una nueva empresa de concesionarios de automóviles usados. Los inversionistas quieren que averigüe qué automóviles son los más populares entre los clientes para que puedan asegurarse de almacenarlos en consecuencia.
 Su nuevo conjunto de datos contiene datos históricos de ventas, incluidos detalles como las características y los precios de los automóviles. 
 Puede usar estos datos para encontrar los 10 autos y modelos más populares. Pero antes de que pueda realizar su análisis, deberá asegurarse de que sus datos estén limpios. 
 Si analiza datos sucios, podría terminar presentando la lista incorrecta de automóviles a los inversores. 
 Eso puede hacer que pierdan dinero en su inversión en inventario de automóviles.
 
-Descripcion de los datos 
+# Descripcion de los datos 
 Este conjunto de datos consta de tres tipos de entidades: 
 (a) la especificación de un automóvil en términos de varias características
 (b) su calificación de riesgo de seguro asignada
