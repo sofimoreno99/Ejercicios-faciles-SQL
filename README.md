@@ -11,9 +11,9 @@ Eso puede hacer que pierdan dinero en su inversión en inventario de automóvile
 
 # Descripcion de los datos 
 Este conjunto de datos consta de tres tipos de entidades: 
-(a) la especificación de un automóvil en términos de varias características
-(b) su calificación de riesgo de seguro asignada
-(c) sus pérdidas normalizadas en uso en comparación con otros automóviles.
+- (a) la especificación de un automóvil en términos de varias características
+- (b) su calificación de riesgo de seguro asignada
+- (c) sus pérdidas normalizadas en uso en comparación con otros automóviles.
 La segunda calificación corresponde al grado en que el auto es más riesgoso de lo que indica su precio. A los automóviles se les asigna inicialmente un símbolo de factor de riesgo asociado con su precio. Luego, si es más arriesgado (o menos), se ajusta este símbolo moviéndolo hacia arriba (o hacia abajo) en la escala. Los actuarios llaman a este proceso "simbolización". Un valor de +3 indica que el auto es arriesgado, -3 que probablemente sea bastante seguro.
 El tercer factor es el pago de pérdida promedio relativo por año de vehículo asegurado. Este valor está normalizado para todos los autos dentro de una clasificación de tamaño particular (pequeño de dos puertas, familiar, deportivo/especial, etc.), y representa la pérdida promedio por auto por año.
 
